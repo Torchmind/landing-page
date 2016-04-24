@@ -82,8 +82,6 @@ export class Vector2 {
          * @returns {Vector2} a reference to this vector.
          */
         public multiply(factor : number) : Vector2 {
-                console.log(factor);
-
                 this._x *= factor;
                 this._y *= factor;
 
