@@ -30,43 +30,74 @@ export class Vector2 {
                 this._y = y;
         }
 
+        /**
+         * Converts a common angle (in degrees) into radians.
+         * @param angle an angle in degrees.
+         * @returns {number} an angle in radians.
+         */
         static toRadians(angle : number) : number {
                 return angle * (Math.PI / 180);
         }
 
+        /**
+         * Creates a copy of this vector.
+         * @returns {Vector2} a copy.
+         */
         public clone() : Vector2 {
                 return new Vector2(this._x, this._y);
         }
 
+        /**
+         * Offsets this vector by a specific amount (adds to it).
+         * @param amount an amount.
+         * @returns {Vector2} a reference to this vector.
+         */
         public offset(amount : Vector2) : Vector2 {
-                this.x += amount.x;
-                this.y += amount.y;
+                this._x += amount.x;
+                this._y += amount.y;
 
                 return this;
         }
 
+        /**
+         * Rotates this vector by the specified angle.
+         * @param angle an angle (in degrees).
+         * @returns {Vector2} a reference to this vector.
+         */
         public rotate(angle : number) : Vector2 {
                 angle = Vector2.toRadians(angle);
 
                 const px : number = this._x * Math.cos(angle) - this._y * Math.sin(angle);
                 const py : number = this._x * Math.sin(angle) + this._y * Math.cos(angle);
 
-                this.x = px;
-                this.y = py;
+                this._x = px;
+                this._y = py;
 
                 return this;
         }
 
+        /**
+         * Multiplies this vector with a factor.
+         * @param factor a factor.
+         * @returns {Vector2} a reference to this vector.
+         */
         public multiply(factor : number) : Vector2 {
-                this.x *= factor;
-                this.y *= factor;
+                console.log(factor);
+
+                this._x *= factor;
+                this._y *= factor;
 
                 return this;
         }
 
-        public multiply(factor : Vector2) : Vector2 {
-                this.x *= factor.x;
-                this.y *= factor.y;
+        /**
+         * Multiplies this vector with another vector.
+         * @param factor a factor.
+         * @returns {Vector2} a reference to this vector.
+         */
+        public multiplyVector(factor : Vector2) : Vector2 {
+                this._x *= factor.x;
+                this._y *= factor.y;
 
                 return this;
         }
@@ -87,10 +118,20 @@ export class Vector2 {
                 this._y = value;
         }
 
+        /**
+         * Retrieves a zero vector (coordinates 0, 0).
+         * @returns {Vector2} a vector.
+         * @constructor
+         */
         public static get ZERO() : Vector2 {
                 return new Vector2();
         }
 
+        /**
+         * Retrieves a random vector (x and y ranging between 0 and 1).
+         * @returns {Vector2} a vector.
+         * @constructor
+         */
         public static get RANDOM() : Vector2 {
                 return new Vector2(Math.random(), Math.random());
         }
