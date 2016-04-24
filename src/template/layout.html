@@ -23,18 +23,12 @@
                         System.config({
                                 defaultJSExtensions: true,
                                 paths: {
-                                        jquery: 'assets/script/3rdParty/jquery.min.js'
+                                        jquery: 'assets/script/3rdParty/jquery.min'
                                 },
                                 meta: {
-                                        'assets/script/3rdParty/jquery/dist/jquery.min.js': {
+                                        'assets/script/3rdParty/jquery/dist/jquery.min': {
                                                 format: 'amd',
                                                 exports: '$'
-                                        }
-                                },
-                                packages: {
-                                        app: {
-                                                format: 'register',
-                                                defaultExtension: 'js'
                                         }
                                 }
                         });
