@@ -66,7 +66,7 @@ export class Color {
         }
 
         get string() : string {
-                return '#' + ('00' + this._red.toString(16)).slice(-2) + ('00' + this._green.toString(16)).slice(-2) + ('00' + this._blue.toString(16)).slice(-2) + ('00' + this._alpha.toString(16)).slice(-2);
+                return 'rgba(' + this._red + ', ' + this._green + ', ' + this._blue + ', ' + (this._alpha / 255) + ')';
         }
 
         set string(value : string) {
