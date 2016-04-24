@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+                <base href="/" />
+                <meta charset="UTF-8" />
+
+                <!-- Document Metadata -->
+                <title>{% block title %}{% endblock %}Torchmind</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="robots" content="index,follow" />
+
+                <!-- Stylesheets -->
+                <link rel="stylesheet" type="text/css" href="assets/3rdParty/normalize.css" />
+                <link rel="stylesheet" type="text/css" href="assets/style/page.css" />
+
+                <!-- Scripts -->
+                <script src="assets/3rdParty/es6-shim.min.js"></script>
+                <script src="assets/3rdParty/system-polyfills.js"></script>
+                <script src="assets/3rdParty/system.js"></script>
+
+                <!-- SystemJS -->
+                <script>
+                        System.config({
+                                defaultJSExtensions: true,
+                                paths: {
+                                        jquery: 'assets/script/3rdParty/jquery.min.js'
+                                },
+                                meta: {
+                                        'assets/script/3rdParty/jquery/dist/jquery.min.js': {
+                                                format: 'amd',
+                                                exports: '$'
+                                        }
+                                },
+                                packages: {
+                                        app: {
+                                                format: 'register',
+                                                defaultExtension: 'js'
+                                        }
+                                }
+                        });
+
+                        System.import('assets/script/main').then(null, console.error.bind(console));
+                </script>
+        </head>
+        <body>
+                <canvas id="background"></canvas>
+
+                <main id="page-wrapper">
+
+                </main>
+        </body>
+</html>
