@@ -25,8 +25,8 @@ import {Vector2} from "../Vector2";
 export abstract class VelocityEntity extends DrawableEntity {
         private _velocity : Vector2;
 
-        constructor(position : Vector2 = Vector2.ZERO, rotation : number = 0, velocity : Vector2 = Vector2.ZERO) {
-                super(position, rotation);
+        constructor(position : Vector2 = Vector2.ZERO, rotation : number = 0, velocity : Vector2 = Vector2.ZERO, health : number = 400) {
+                super(position, rotation, health);
                 this._velocity = velocity;
         }
 

@@ -26,16 +26,20 @@ import {Color} from "../Color";
 export abstract class DrawableEntity implements Drawable {
         private _position : Vector2;
         private _rotation : number;
+        private _health : number;
+        private _lifetime : number = 0;
 
-        public constructor(position : Vector2 = Vector2.ZERO, rotation : number = 0) {
+        public constructor(position : Vector2 = Vector2.ZERO, rotation : number = 0, health : number = -1) {
                 this._position = position;
                 this._rotation = rotation;
+                this._health = health;
         }
 
         /**
          * Handles a single tick which modifies the object state.
          */
         public think() : void {
+                ++this._lifetime;
         }
 
         get position() : Vector2 {
@@ -52,6 +56,34 @@ export abstract class DrawableEntity implements Drawable {
 
         set rotation(value : number) {
                 this._rotation = value;
+        }
+
+        get health() : number {
+                return this._health;
+        }
+
+        set health(value : number) {
+                this._health = value;
+        }
+
+        get lifetime() : number {
+                return this._lifetime;
+        }
+
+        /**
+         * Retrieves the visibility (a percentage).
+         * @returns {number}
+         */
+        public getVisibility() : number {
+                return 1.0;
+        }
+
+        /**
+         * Checks whether the entity is considered "dead" and should thus be removed.
+         * @returns {boolean} true if dead, false otherwise.
+         */
+        public isDead() : boolean {
+                return this._health == 0;
         }
 
         /**
