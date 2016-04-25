@@ -27,9 +27,9 @@ import {Cloneable} from "../utility/Cloneable";
 export class Dimensions implements Cloneable {
         private _height : number;
         private _width : number;
-        private _listener : (width, height) => boolean;
+        private _listener : (width : number, height : number) => boolean;
 
-        public constructor(width : number, height : number, listener : (width, height) => boolean = null) {
+        public constructor(width : number, height : number, listener : (width : number, height : number) => boolean = null) {
                 this._width = width;
                 this._height = height;
                 this._listener = listener;
