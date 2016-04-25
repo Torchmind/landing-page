@@ -73,6 +73,9 @@ export class LineEntity extends VelocityEntity {
                 ctx.stroke();
         }
 
+        /**
+         * {@inheritDoc}
+         */
         public isDead() : boolean {
                 return super.isDead() || (this.position.x <= -100 || this.position.x >= (this.manager.bounds.x + 100) || this.position.y <= -100 || this.position.y >= (this.manager.bounds.y + 100));
         }
