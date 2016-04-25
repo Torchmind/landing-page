@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 import {Cloneable} from "../utility/Cloneable";
+import {Vector2} from "./Vector2";
 
 /**
  * Point
@@ -53,6 +54,18 @@ export class Point implements Cloneable {
                 }
 
                 return that == this || (this._x == that.x && this._y == that.y);
+        }
+
+        /**
+         * Offsets this points coordinates by the amount and direction represented by the supplied vector.
+         *
+         * This method returns a reference to its parent instance and is thus chain-able.
+         *
+         * @param vector a vector to offset by.
+         * @returns {Point} a reference to this point.
+         */
+        public offsetBy(vector : Vector2) : Point {
+                return this.update(new Point((this._x + vector.x), (this._y + vector.y)));
         }
 
         /**
