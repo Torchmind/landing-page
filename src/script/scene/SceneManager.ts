@@ -18,6 +18,7 @@ import $ from 'jquery';
 import {Scene} from "./Scene";
 import {Color} from "../drawable/Color";
 import {DefaultScene} from "./DefaultScene";
+import {Vector2} from "../drawable/Vector2";
 
 /**
  * Scene Manager
@@ -47,7 +48,7 @@ export class SceneManager {
 
                 // hook canvas
                 this._ctx = this._canvas.getContext("2d");
-                this.currentScene = new DefaultScene();
+                this.currentScene = new DefaultScene(this);
                 this._ctx.save();
         }
 
@@ -80,18 +81,8 @@ export class SceneManager {
          */
         private onUpdate() : void {
                 this._ctx.restore();
-                const color : Color = Color.WHITE;
 
-                if (!!this.targetScene) {
-                        if (this.transitionState == 1.0) {
-                                this.currentScene = this.targetScene;
-                                this.targetScene = null;
-                        } else {
-                                this.transitionState += 0.025;
-                                color.alpha = (1.0 - this.transitionState) * 150;
-                        }
-                }
-
+                const color : Color = this.color;
                 this._ctx.strokeStyle = color.string;
                 this._ctx.fillStyle = color.string;
                 this._ctx.save();
@@ -115,5 +106,25 @@ export class SceneManager {
 
         get ctx() : CanvasRenderingContext2D {
                 return this._ctx;
+        }
+
+        get color() : Color {
+                const color : Color = Color.WHITE;
+
+                if (!!this.targetScene) {
+                        if (this.transitionState == 1.0) {
+                                this.currentScene = this.targetScene;
+                                this.targetScene = null;
+                        } else {
+                                this.transitionState += 0.025;
+                                color.alpha = (1.0 - this.transitionState) * 150;
+                        }
+                }
+
+                return color;
+        }
+
+        get bounds() : Vector2 {
+                return new Vector2(this.canvas.width, this.canvas.height);
         }
 }
