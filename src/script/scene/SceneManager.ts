@@ -32,7 +32,7 @@ export class SceneManager {
         private timerId : number;
 
         private currentScene : Scene;
-        private targetScene : Scene;
+        private _targetScene : Scene;
         private transitionState : number = 0.0;
 
         public constructor(selector : string) {
@@ -111,10 +111,10 @@ export class SceneManager {
         get color() : Color {
                 const color : Color = Color.WHITE;
 
-                if (!!this.targetScene) {
+                if (!!this._targetScene) {
                         if (this.transitionState == 1.0) {
-                                this.currentScene = this.targetScene;
-                                this.targetScene = null;
+                                this.currentScene = this._targetScene;
+                                this._targetScene = null;
                         } else {
                                 this.transitionState += 0.025;
                                 color.alpha = (1.0 - this.transitionState) * 150;
@@ -127,9 +127,13 @@ export class SceneManager {
         get bounds() : Vector2 {
                 return new Vector2(this.canvas.width, this.canvas.height);
         }
+        
+        get targetScene() : Scene {
+                return this._targetScene;
+        }
 
-        set targetScene(scene : Scene) {
-                this.targetScene = scene;
+        set targetScene(value : Scene) {
+                this._targetScene = value;
                 this.transitionState = 0.0;
         }
 }
