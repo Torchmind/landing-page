@@ -127,4 +127,9 @@ export class SceneManager {
         get bounds() : Vector2 {
                 return new Vector2(this.canvas.width, this.canvas.height);
         }
+
+        set targetScene(scene : Scene) {
+                this.targetScene = scene;
+                this.transitionState = 0.0;
+        }
 }
