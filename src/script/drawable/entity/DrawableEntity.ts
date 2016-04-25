@@ -36,8 +36,9 @@ export abstract class DrawableEntity implements Drawable {
 
         /**
          * Handles a single tick which modifies the object state.
+         * @param delta a floating point which describes the relation of draw calls to realtime seconds.
          */
-        public think() : void {
+        public think(delta : number) : void {
                 ++this._lifetime;
         }
 
@@ -88,5 +89,5 @@ export abstract class DrawableEntity implements Drawable {
         /**
          * {@inheritDoc}
          */
-        public abstract draw(ctx : CanvasRenderingContext2D) : void;
+        public abstract draw(ctx : CanvasRenderingContext2D, delta : number) : void;
 }

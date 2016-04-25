@@ -37,8 +37,8 @@ export class LineEntity extends VelocityEntity {
         /**
          * {@inheritDoc}
          */
-        public think() : void {
-                super.think();
+        public think(delta : number) : void {
+                super.think(delta);
 
                 if (this.position.x <= -100 || this.position.x >= (this.manager.bounds.x + 100) || this.position.y <= -100 || this.position.y >= (this.manager.bounds.y + 100)) {
                         this.health = 0;
@@ -48,7 +48,7 @@ export class LineEntity extends VelocityEntity {
         /**
          * {@inheritDoc}
          */
-        public draw(ctx : CanvasRenderingContext2D) : void {
+        public draw(ctx : CanvasRenderingContext2D, delta : number) : void {
                 const position1 = (new Vector2(0, (80 * this.size))).rotate(this.rotation).offset(this.position);
                 const position2 = (new Vector2((-100 * this.size), 0)).rotate(this.rotation).offset(this.position);
                 const position3 = (new Vector2((80 * this.size), 0)).rotate(this.rotation).offset(this.position);

@@ -25,6 +25,7 @@ export interface Drawable {
         /**
          * Draws an object onto the supplied canvas object.
          * @param ctx a canvas rendering context.
+         * @param delta a floating point which describes the relation of draw calls to realtime seconds.
          */
-        draw(ctx : CanvasRenderingContext2D) : void;
+        draw(ctx : CanvasRenderingContext2D, delta : number) : void;
 }

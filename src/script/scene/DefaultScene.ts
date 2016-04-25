@@ -36,8 +36,8 @@ export class DefaultScene extends EntityScene {
         /**
          * {@inheritDoc}
          */
-        public think(manager : SceneManager) : void {
-                super.think(manager);
+        public think(manager : SceneManager, delta : number) : void {
+                super.think(manager, delta);
 
                 while (this.entities.length < this.getEntityAmount(manager)) {
                         this.spawn(new LineEntity(manager));

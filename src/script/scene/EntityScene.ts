@@ -35,14 +35,14 @@ export abstract class EntityScene implements Scene {
         /**
          * {@inheritDoc}
          */
-        public draw(ctx : CanvasRenderingContext2D) : void {
+        public draw(ctx : CanvasRenderingContext2D, delta : number) : void {
                 for (let entity of this._entities) {
                         const color : Color = this._manager.color.clone();
                         color.alpha *= entity.getVisibility();
 
                         ctx.strokeStyle = color.string;
                         ctx.fillStyle = color.string;
-                        entity.draw(ctx);
+                        entity.draw(ctx, delta);
 
                         ctx.restore();
                 }
@@ -51,9 +51,9 @@ export abstract class EntityScene implements Scene {
         /**
          * {@inheritDoc}
          */
-        public think(manager : SceneManager) : void {
+        public think(manager : SceneManager, delta : number) : void {
                 for (let entity of this._entities) {
-                        entity.think();
+                        entity.think(delta);
 
                         if (entity.isDead()) {
                                 this.kill(entity);

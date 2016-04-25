@@ -27,12 +27,14 @@ export interface Scene {
         /**
          * Draws a single frame.
          * @param ctx a canvas rendering context.
+         * @param delta a floating point which describes the relation of draw calls to realtime seconds.
          */
-        draw(ctx : CanvasRenderingContext2D) : void;
+        draw(ctx : CanvasRenderingContext2D, delta : number) : void;
 
         /**
          * Calculates the state for the next draw call.
          * @param manager a reference to the parent manager.
+         * @param delta a floating point which describes the relation of draw calls to realtime seconds.
          */
-        think(manager : SceneManager) : void;
+        think(manager : SceneManager, delta : number) : void;
 }

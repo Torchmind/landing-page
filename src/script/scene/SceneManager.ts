@@ -20,6 +20,8 @@ import {DefaultScene} from "./DefaultScene";
 import {Vector2} from "../drawable/Vector2";
 declare const $:any;
 
+const TICK_AMOUNT = 40;
+
 /**
  * Scene Manager
  *
@@ -30,6 +32,8 @@ export class SceneManager {
         private _canvas : HTMLCanvasElement;
         private _ctx : CanvasRenderingContext2D;
         private timerId : number;
+
+        private delta : number = 1 / TICK_AMOUNT;
 
         private _currentScene : Scene;
         private _targetScene : Scene;
@@ -64,7 +68,7 @@ export class SceneManager {
                         throw new Error("Already started");
                 }
 
-                this.timerId = window.setInterval($.proxy(this.onUpdate, this), 50);
+                this.timerId = window.setInterval($.proxy(this.onUpdate, this), (1000 / TICK_AMOUNT));
         }
 
         public stop() : void {
@@ -98,7 +102,7 @@ export class SceneManager {
                 this._ctx.save();
 
                 // update scene state
-                this._currentScene.think(this);
+                this._currentScene.think(this, this.delta); // TODO: Dynamic delta for catchup
                 this.redraw();
         }
 
@@ -107,7 +111,7 @@ export class SceneManager {
          */
         protected redraw() : void {
                 this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
-                this._currentScene.draw(this._ctx);
+                this._currentScene.draw(this._ctx, this.delta);
         }
 
         get canvas() : HTMLCanvasElement {

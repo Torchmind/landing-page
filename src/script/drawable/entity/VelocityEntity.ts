@@ -33,10 +33,10 @@ export abstract class VelocityEntity extends DrawableEntity {
         /**
          * {@inheritDoc}
          */
-        public think() : void {
-                super.think();
+        public think(delta : number) : void {
+                super.think(delta);
 
-                const rotatedVector = this._velocity.clone().rotate(this.rotation);
+                const rotatedVector = this._velocity.clone().multiply(delta).rotate(this.rotation);
 
                 this.position.x += rotatedVector.x;
                 this.position.y += rotatedVector.y;
