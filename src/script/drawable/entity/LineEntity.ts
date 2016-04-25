@@ -28,7 +28,7 @@ export class LineEntity extends VelocityEntity {
         private size : number;
 
         constructor(manager : SceneManager) {
-                super(Vector2.RANDOM.multiplyVector(manager.bounds), (Math.random() * 720), Vector2.RANDOM.multiply(0.5), ((Math.random() * 800) + 400));
+                super(Vector2.RANDOM.multiplyVector(manager.bounds), (Math.random() * 720), Vector2.RANDOM.multiply(4), ((Math.random() * 800) + 400));
 
                 this.manager = manager;
                 this.size = Math.max(0.25, Math.random());
