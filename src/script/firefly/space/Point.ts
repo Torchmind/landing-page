@@ -24,9 +24,9 @@ import {Cloneable} from "../utility/Cloneable";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export class Point implements Cloneable {
-        private _x : number;
-        private _y : number;
-        private _listener : (x : number, y : number) => boolean;
+        protected _x : number;
+        protected _y : number;
+        protected _listener : (x : number, y : number) => boolean;
 
         public constructor(x : number, y : number, listener : (x : number, y : number) => boolean = null) {
                 this._x = x;
