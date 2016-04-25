@@ -33,6 +33,10 @@ export class Color {
                 this._alpha = alpha;
         }
 
+        public clone() : Color {
+                return new Color(this._red, this._green, this._blue, this._alpha);
+        }
+
         get red() : number {
                 return this._red;
         }
