@@ -82,6 +82,16 @@ export class SceneManager {
         private onUpdate() : void {
                 this._ctx.restore();
 
+                if (this.transitionState >= 1.0) {
+                        console.log(this._targetScene);
+
+                        this._currentScene = this._targetScene;
+                        this._targetScene = null;
+                        this.transitionState = 0;
+                } else if (!!this._targetScene) {
+                        this.transitionState += 0.01;
+                }
+
                 const color : Color = this.color;
                 this._ctx.strokeStyle = color.string;
                 this._ctx.fillStyle = color.string;
@@ -112,12 +122,8 @@ export class SceneManager {
                 const color : Color = Color.WHITE;
 
                 if (!!this._targetScene) {
-                        if (this.transitionState == 1.0) {
-                                this._currentScene = this._targetScene;
-                                this._targetScene = null;
-                        } else {
-                                this.transitionState += 0.025;
-                                color.alpha = (1.0 - this.transitionState) * 150;
+                        if (this.transitionState >= 0.0) {
+                                color.alpha = Math.max(0.0, (1.0 - this.transitionState)) * 150;
                         }
                 }
 
