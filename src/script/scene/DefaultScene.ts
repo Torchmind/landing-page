@@ -28,7 +28,7 @@ export class DefaultScene extends EntityScene {
         public constructor(manager : SceneManager) {
                 super(manager);
 
-                for(var i : number = 0; i < this.getEntityAmount(manager); ++i) {
+                for (var i : number = 0; i < this.getEntityAmount(manager); ++i) {
                         this.spawn(new LineEntity(manager));
                 }
         }

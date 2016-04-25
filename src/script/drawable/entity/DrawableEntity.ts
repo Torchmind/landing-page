@@ -16,7 +16,6 @@
  */
 import {Drawable} from "../Drawable";
 import {Vector2} from "../Vector2";
-import {Color} from "../Color";
 
 /**
  * Drawable Entity

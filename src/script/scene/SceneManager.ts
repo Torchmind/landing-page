@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import $ from 'jquery';
+import $ from "jquery";
 import {Scene} from "./Scene";
 import {Color} from "../drawable/Color";
 import {DefaultScene} from "./DefaultScene";

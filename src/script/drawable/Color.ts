@@ -78,10 +78,10 @@ export class Color {
                         throw new Error('Colors must begin with a #');
                 }
 
-                this._red = Number.parseInt('0x'+ value.substr(1, 2));
-                this._green = Number.parseInt('0x'+ value.substr(3, 2));
-                this._blue = Number.parseInt('0x'+ value.substr(5, 2));
-                this._alpha = Number.parseInt('0x'+ value.substr(7, 2));
+                this._red = Number.parseInt('0x' + value.substr(1, 2));
+                this._green = Number.parseInt('0x' + value.substr(3, 2));
+                this._blue = Number.parseInt('0x' + value.substr(5, 2));
+                this._alpha = Number.parseInt('0x' + value.substr(7, 2));
         }
 
         static get WHITE() : Color {
