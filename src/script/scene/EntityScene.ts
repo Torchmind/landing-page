@@ -17,6 +17,7 @@
 import {Scene} from "./Scene";
 import {SceneManager} from "./SceneManager";
 import {DrawableEntity} from "../drawable/entity/DrawableEntity";
+import {Color} from "../drawable/Color";
 
 /**
  * Entity Scene
@@ -24,14 +25,26 @@ import {DrawableEntity} from "../drawable/entity/DrawableEntity";
  * Provides a scene implementation which utilizes entities and other drawables for its purposes.
  */
 export abstract class EntityScene implements Scene {
+        private _manager : SceneManager;
         private _entities : DrawableEntity[] = [];
+
+        constructor(manager : SceneManager) {
+                this._manager = manager;
+        }
 
         /**
          * {@inheritDoc}
          */
         public draw(ctx : CanvasRenderingContext2D) : void {
                 for (let entity of this._entities) {
+                        const color : Color = this._manager.color.clone();
+                        color.alpha *= entity.getVisibility();
+
+                        ctx.strokeStyle = color.string;
+                        ctx.fillStyle = color.string;
                         entity.draw(ctx);
+
+                        ctx.restore();
                 }
         }
 
@@ -41,6 +54,10 @@ export abstract class EntityScene implements Scene {
         public think(manager : SceneManager) : void {
                 for (let entity of this._entities) {
                         entity.think();
+
+                        if (entity.isDead()) {
+                                this.kill(entity);
+                        }
                 }
         }
 
@@ -57,7 +74,14 @@ export abstract class EntityScene implements Scene {
          * @param entity an entity.
          */
         public kill(entity : DrawableEntity) {
-                this._entities.slice(this._entities.indexOf(entity), 1);
+                const index : number = this._entities.indexOf(entity);
+
+                if (index == -1) {
+                        throw new Error("Entity is not in list");
+                }
+
+                entity.health = 0;
+                this._entities.splice(index, 1);
         }
 
         protected get entities() : DrawableEntity[] {
