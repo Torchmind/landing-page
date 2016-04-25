@@ -57,6 +57,17 @@ export class Point implements Cloneable {
         }
 
         /**
+         * Creates an immutable copy of this point.
+         *
+         * @returns {Point} an immutable point.
+         */
+        public immutable() : Point {
+                return new Point(this._x, this._y, (x, y) => {
+                        return false;
+                });
+        }
+
+        /**
          * Offsets this points coordinates by the amount and direction represented by the supplied vector.
          *
          * This method returns a reference to its parent instance and is thus chain-able.

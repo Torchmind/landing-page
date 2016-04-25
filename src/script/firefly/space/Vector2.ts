@@ -48,6 +48,17 @@ export class Vector2 extends Point {
         }
 
         /**
+         * Creates an immutable copy of this vector.
+         *
+         * @returns {Vector2} an immutable vector.
+         */
+        public immutable() : Vector2 {
+                return new Vector2(this._x, this._y, (x, y) => {
+                        return false;
+                });
+        }
+
+        /**
          * Multiplies this vector's coordinates with the supplied factor.
          *
          * This method returns a reference to its parent instance and is thus chain-able.
