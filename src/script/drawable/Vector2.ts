@@ -131,6 +131,6 @@ export class Vector2 {
          * @constructor
          */
         public static get RANDOM() : Vector2 {
-                return new Vector2(Math.random(), Math.random());
+                return new Vector2((Math.random() * 2) - 1, (Math.random() * 2) - 1);
         }
 }
