@@ -107,4 +107,56 @@ export class Vector2 extends Point {
                 const length : number = this.length;
                 return new Vector2((this._x / length), (this._y / length));
         }
+
+        /* Constants */
+
+        /**
+         * Retrieves a normalized vector which points directly down.
+         *
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get DOWN() {
+                return new Vector2(0, -1);
+        }
+
+        /**
+         * Retrieves a normalized vector which points directly left.
+         *
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get LEFT() : Vector2 {
+                return new Vector2(-1, 0);
+        }
+
+        /**
+         * Retrieves a normalized vector which points directly right.
+         *
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get RIGHT() : Vector2 {
+                return new Vector2(1, 0);
+        }
+
+        /**
+         * Retrieves a normalized vector which points directly up.
+         *
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get UP() {
+                return new Vector2(0, 1);
+        }
+
+        /**
+         * Retrieves a zero vector which has both of its coordinates set to zero.
+         *
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get ZERO() : Vector2 {
+                return new Vector2(0, 0);
+        }
 }
