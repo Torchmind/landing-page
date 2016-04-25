@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import $ from "jquery";
 import {Scene} from "./Scene";
 import {Color} from "../drawable/Color";
 import {DefaultScene} from "./DefaultScene";
 import {Vector2} from "../drawable/Vector2";
+declare const $:any;
 
 /**
  * Scene Manager
@@ -31,7 +31,7 @@ export class SceneManager {
         private _ctx : CanvasRenderingContext2D;
         private timerId : number;
 
-        private currentScene : Scene;
+        private _currentScene : Scene;
         private _targetScene : Scene;
         private transitionState : number = 0.0;
 
@@ -48,7 +48,7 @@ export class SceneManager {
 
                 // hook canvas
                 this._ctx = this._canvas.getContext("2d");
-                this.currentScene = new DefaultScene(this);
+                this._currentScene = new DefaultScene(this);
                 this._ctx.save();
         }
 
@@ -88,7 +88,7 @@ export class SceneManager {
                 this._ctx.save();
 
                 // update scene state
-                this.currentScene.think(this);
+                this._currentScene.think(this);
                 this.redraw();
         }
 
@@ -97,7 +97,7 @@ export class SceneManager {
          */
         protected redraw() : void {
                 this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
-                this.currentScene.draw(this._ctx);
+                this._currentScene.draw(this._ctx);
         }
 
         get canvas() : HTMLCanvasElement {
@@ -113,7 +113,7 @@ export class SceneManager {
 
                 if (!!this._targetScene) {
                         if (this.transitionState == 1.0) {
-                                this.currentScene = this._targetScene;
+                                this._currentScene = this._targetScene;
                                 this._targetScene = null;
                         } else {
                                 this.transitionState += 0.025;
@@ -127,7 +127,7 @@ export class SceneManager {
         get bounds() : Vector2 {
                 return new Vector2(this.canvas.width, this.canvas.height);
         }
-        
+
         get targetScene() : Scene {
                 return this._targetScene;
         }
@@ -135,5 +135,9 @@ export class SceneManager {
         set targetScene(value : Scene) {
                 this._targetScene = value;
                 this.transitionState = 0.0;
+        }
+
+        get currentScene() : Scene {
+                return this._currentScene;
         }
 }
