@@ -148,4 +148,16 @@ export class Point implements Cloneable {
 
                 this._y = value;
         }
+
+        /* Constants */
+
+        /**
+         * Retrieves the exact location of the coordinate system origin.
+         *
+         * @returns {Point}
+         * @constructor
+         */
+        static get ORIGIN() {
+                return new Point(0, 0);
+        }
 }
