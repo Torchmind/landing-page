@@ -38,11 +38,24 @@ export class Stack<E> implements Cloneable {
         }
 
         /**
+         * Checks whether the stack is empty.
+         *
+         * @returns {boolean} true if empty, false otherwise.
+         */
+        public isEmpty() : boolean {
+                return this.length == 0;
+        }
+
+        /**
          * Retrieves the last element within the stack.
          *
          * @returns {E} the last element.
          */
         public peek() : E {
+                if (this.isEmpty()) {
+                        return null;
+                }
+
                 return this._content[(this._content.length - 1)];
         }
 
@@ -52,6 +65,10 @@ export class Stack<E> implements Cloneable {
          * @returns {T} the last element.
          */
         public pop() : E {
+                if (this.isEmpty()) {
+                        throw new Error("Cannot pop an element off of an empty stack");
+                }
+
                 return this._content.pop();
         }
 
