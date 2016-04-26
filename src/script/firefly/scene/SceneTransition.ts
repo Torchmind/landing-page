@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import {Container} from "../container/Container";
-import {Scene} from "../../scene/Scene";
+import {Scene} from "../scene/Scene";
 
 /**
  * Scene Transition
