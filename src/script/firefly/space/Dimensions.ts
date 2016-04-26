@@ -57,6 +57,17 @@ export class Dimensions implements Cloneable {
         }
 
         /**
+         * Creates an immutable copy of this set of dimensions.
+         *
+         * @returns {Dimensions} an immutable copy.
+         */
+        public immutable() : Dimensions {
+                return new Dimensions(this._width, this._height, (width, height) => {
+                        return false;
+                });
+        }
+
+        /**
          * Converts this instance into a human readable string which may be used for logging purposes.
          * @returns {string} a string representation.
          */
