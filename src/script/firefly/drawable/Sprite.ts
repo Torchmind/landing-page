@@ -47,10 +47,10 @@ export interface Sprite extends Cloneable {
 
         /**
          * Draws a sprite at a specified location.
-         * 
+         *
          * @param location a location.
          * @param rotation a rotation.
          * @param scale a scale.
          */
-        draw(location : Point, rotation : number = 0.0, scale : number = 1.0) : void;
+        draw(location : Point, rotation? : number, scale? : number) : void;
 }

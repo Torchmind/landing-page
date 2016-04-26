@@ -119,7 +119,7 @@ export interface Container {
          * @param r the circle radius.
          * @param thickness the line thickness.
          */
-        drawCircle(x : number, y : number, r : number, thickness : number = 1) : void;
+        drawCircle(x : number, y : number, r : number, thickness? : number) : void;
 
         /**
          * Draws a line between two points with the specified thickness.
@@ -130,7 +130,7 @@ export interface Container {
          * @param y2 the ending Y-Coordinate.
          * @param thickness the line thickness.
          */
-        drawLine(x1 : number, y1 : number, x2 : number, y2 : number, thickness : number = 1) : void;
+        drawLine(x1 : number, y1 : number, x2 : number, y2 : number, thickness? : number) : void;
 
         /**
          * Fills the path which has been added to the current state after {@link #startPath()} using
