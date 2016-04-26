@@ -46,10 +46,8 @@ export interface Sprite {
 
         /**
          * Draws a sprite at a specified location.
-         *
-         * @param location a location.
-         * @param rotation a rotation.
+         * 
          * @param scale a scale.
          */
-        draw(location : Point, rotation? : number, scale? : number) : void;
+        draw(scale? : number) : void;
 }
