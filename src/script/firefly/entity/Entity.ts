@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {Point} from "../space/Point";
 
 /**
  * Entity
@@ -23,6 +24,11 @@
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export interface Entity {
+
+        /**
+         * Stores the local entity position within the virtual world.
+         */
+        position : Point;
 
         /**
          * Processes updates to the current entity state.
