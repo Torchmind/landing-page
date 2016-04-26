@@ -23,4 +23,12 @@ import {Drawable} from "../drawable/Drawable";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-export interface Scene extends Drawable { }
+export interface Scene extends Drawable {
+        
+        /**
+         * Updates the scene state.
+         *
+         * @param delta a number which describes the relation between frames and realworld seconds.
+         */
+        think(delta : number) : void;
+}

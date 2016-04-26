@@ -16,9 +16,9 @@
  */
 import {Container} from "../container/Container";
 import {Drawable} from "../drawable/Drawable";
-import {DynamicScene} from "./DynamicScene";
 import {Entity} from "../entity/Entity";
 import {LivingEntity} from "../entity/LivingEntity";
+import {Scene} from "../scene/Scene";
 
 /**
  * Entity Scene
@@ -27,17 +27,15 @@ import {LivingEntity} from "../entity/LivingEntity";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-export class EntityScene implements DynamicScene {
-        private _entities : Entity[] = new [];
+export class EntityScene implements Scene {
+        private _entities : Entity[] = [];
 
         /**
          * {@inheritDoc}
          */
         public draw(container : Container, delta : number) : void {
-                for (var entity : Entity in this._entities) {
-                        if (entity instanceof Drawable) {
-                                (<Drawable> entity).draw(container, delta);
-                        }
+                for (var entity of this._entities) {
+                        entity.draw(container, delta);
                 }
         }
 
@@ -69,7 +67,7 @@ export class EntityScene implements DynamicScene {
          * {@inheritDoc}
          */
         public think(delta : number) : void {
-                for (var entity : Entity in this._entities) {
+                for (var entity of this._entities) {
                         entity.think(delta);
 
                         if (entity instanceof LivingEntity && (<LivingEntity> entity).isDead()) {
