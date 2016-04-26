@@ -29,6 +29,7 @@ export interface Drawable {
          * Draws this instance on-screen.
          *
          * @param container a container to draw on.
+         * @param delta a number which describes the relation between frames and realworld seconds.
          */
-        draw(container : Container) : void;
+        draw(container : Container, delta : number) : void;
 }

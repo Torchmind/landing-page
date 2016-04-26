@@ -99,18 +99,12 @@ export interface Container {
         createSprite(uri : string) : Promise<Sprite>;
 
         /**
-         * Draws a single drawable using the configuration within the current state.
-         *
-         * @param drawable a drawable.
-         */
-        draw(drawable : Drawable) : void;
-
-        /**
          * Draws a single drawable within an isolated scope using the configuration within the current state.
          *
          * @param drawable a drawable.
+         * @param delta a number which describes the relation between frames and realworld seconds.
          */
-        drawIsolated(drawable : Drawable) : void;
+        drawIsolated(drawable : Drawable, delta : number) : void;
 
         /**
          * Draws a circle at a specified point using the passed line thickness.
