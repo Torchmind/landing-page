@@ -23,4 +23,4 @@ import {Drawable} from "../drawable/Drawable";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-interface Scene extends Drawable { }
+export interface Scene extends Drawable { }
