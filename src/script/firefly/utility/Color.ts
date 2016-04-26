@@ -28,9 +28,9 @@ export class Color implements Cloneable {
         private _green : number;
         private _blue : number;
         private _alpha : number;
-        private _listener : (red : number, green : number, blue : number, alpha : number) => boolean;
+        private _listener : (color : Color) => boolean;
 
-        public constructor(red : number, green : number, blue : number, alpha : number = 255, listener : (red : number, green : number, blue : number, alpha : number) => boolean = null) {
+        public constructor(red : number, green : number, blue : number, alpha : number = 255, listener : (color : Color) => boolean = null) {
                 this._red = red;
                 this._green = green;
                 this._blue = blue;
@@ -61,7 +61,7 @@ export class Color implements Cloneable {
          * @returns {Color} an immutable copy.
          */
         public immutable() : Color {
-                return new Color(this._red, this._green, this._blue, this._alpha, (red, green, blue, alpha) => {
+                return new Color(this._red, this._green, this._blue, this._alpha, (color : Color) => {
                         return false;
                 });
         }
@@ -76,7 +76,7 @@ export class Color implements Cloneable {
          */
         public update(color: Color) : Color {
                 if (!this.equals(color) && this._listener != null) {
-                        if (!this._listener(color.red, color.green, color.blue, color.alpha)) {
+                        if (!this._listener(color.clone())) {
                                 return this;
                         }
                 }
@@ -110,7 +110,10 @@ export class Color implements Cloneable {
          */
         set red(value : number) {
                 if (this._red != value && this._listener != null) {
-                        if (!this._listener(value, this._green, this._blue, this._alpha)) {
+                        const color : Color = this.clone();
+                        color.red = value;
+
+                        if (!this._listener(color)) {
                                 return;
                         }
                 }
@@ -137,7 +140,10 @@ export class Color implements Cloneable {
          */
         set green(value : number) {
                 if (this._green != value && this._listener != null) {
-                        if (!this._listener(this._red, value, this._blue, this._alpha)) {
+                        const color : Color = this.clone();
+                        color.green = value;
+
+                        if (!this._listener(color)) {
                                 return;
                         }
                 }
@@ -164,7 +170,10 @@ export class Color implements Cloneable {
          */
         set blue(value : number) {
                 if (this._blue != value && this._listener != null) {
-                        if (!this._listener(this._red, this._green, value, this._alpha)) {
+                        const color : Color = this.clone();
+                        color.blue = value;
+
+                        if (!this._listener(color)) {
                                 return;
                         }
                 }
@@ -191,7 +200,10 @@ export class Color implements Cloneable {
          */
         set alpha(value : number) {
                 if (this._alpha != value && this._listener != null) {
-                        if (!this._listener(this._red, this._green, this._blue, value)) {
+                        const color : Color = this.clone();
+                        color.alpha = value;
+
+                        if (!this._listener(color)) {
                                 return;
                         }
                 }
