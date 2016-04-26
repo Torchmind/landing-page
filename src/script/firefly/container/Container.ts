@@ -19,6 +19,7 @@ import {Dimensions} from "../space/Dimensions";
 import {Point} from "../space/Point";
 import {Sprite} from "../drawable/Sprite";
 import {Drawable} from "../drawable/Drawable";
+import {Vector2} from "../space/Vector2";
 
 /**
  * Container
@@ -114,23 +115,19 @@ export interface Container {
         /**
          * Draws a circle at a specified point using the passed line thickness.
          *
-         * @param x the center X-Coordinate.
-         * @param y the center Y-Coordinate.
          * @param r the circle radius.
          * @param thickness the line thickness.
          */
-        drawCircle(x : number, y : number, r : number, thickness? : number) : void;
+        drawCircle(r : number, thickness? : number) : void;
 
         /**
          * Draws a line between two points with the specified thickness.
          *
-         * @param x1 the starting X-Coordinate.
-         * @param y1 the starting Y-Coordinate.
-         * @param x2 the ending X-Coordinate.
-         * @param y2 the ending Y-Coordinate.
+         * @param x the ending X-Coordinate.
+         * @param y the ending Y-Coordinate.
          * @param thickness the line thickness.
          */
-        drawLine(x1 : number, y1 : number, x2 : number, y2 : number, thickness? : number) : void;
+        drawLine(x : number, y : number, thickness? : number) : void;
 
         /**
          * Fills the path which has been added to the current state after {@link #startPath()} using
@@ -183,8 +180,7 @@ export interface Container {
          * Adds a translation to the current container (within the scope of the current state as created by
          * {@link #push()}).
          *
-         * @param x an X-Coordinate.
-         * @param y a Y-Coordinate.
+         * @param vector an offset.
          */
-        translate(x : number, y : number) : void;
+        translate(vector : Vector2) : void;
 }
