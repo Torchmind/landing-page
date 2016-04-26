@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {Scene} from "../../scene/Scene";
+import {Scene} from "./Scene";
 
 /**
  * Dynamic Scene
@@ -28,6 +28,8 @@ interface DynamicScene extends Scene {
 
         /**
          * Updates the scene state.
+         *
+         * @param delta a number which describes the relation between frames and realworld seconds.
          */
-        think() : void;
+        think(delta : number) : void;
 }
