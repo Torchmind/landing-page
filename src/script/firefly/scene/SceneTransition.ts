@@ -36,6 +36,7 @@ export interface SceneTransition {
          * @param delta a number which describes the relation between updates and realworld seconds.
          * @param a the first (current scene).
          * @param b the scene to transition to.
+         * @return [boolean} if true, indicates that the animation has been finalized, if false indicates that more steps are needed.
          */
-        draw(container : Container, delta: number, a : Scene, b : Scene) : void;
+        draw(container : Container, delta: number, a : Scene, b : Scene) : boolean;
 }
