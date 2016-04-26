@@ -32,6 +32,8 @@ export interface Entity {
 
         /**
          * Processes updates to the current entity state.
+         *
+         * @param delta a number which describes the relation between updates and realworld seconds.
          */
-        think() : void;
+        think(delta : number) : void;
 }
