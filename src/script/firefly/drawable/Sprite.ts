@@ -14,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {Cloneable} from "../utility/Cloneable";
 import {Dimensions} from "../space/Dimensions";
 import {Point} from "../space/Point";
 
@@ -26,7 +25,7 @@ import {Point} from "../space/Point";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-export interface Sprite extends Cloneable {
+export interface Sprite {
 
         /**
          * Represents the (default) sprite size.
