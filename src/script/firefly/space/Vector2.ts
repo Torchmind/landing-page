@@ -91,6 +91,26 @@ export class Vector2 extends Point {
         }
 
         /**
+         * Converts an angle in degrees into radians.
+         *
+         * @param angle an angle in degrees.
+         * @returns {number} an angle in radians.
+         */
+        public static toRadians(angle : number) : number {
+                return angle * (Math.PI / 180);
+        }
+
+        /**
+         * Converts an angle in radians into degrees.
+         *
+         * @param radians an angle in radians.
+         * @returns {number} an angle in degrees.
+         */
+        public static toAngle(radians : number) : number {
+                return radians * (180 / Math.PI);
+        }
+
+        /**
          * {@inheritDoc}
          */
         public update(point : Point) : Vector2 {
