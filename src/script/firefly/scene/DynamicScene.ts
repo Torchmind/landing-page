@@ -24,7 +24,7 @@ import {Scene} from "./Scene";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-interface DynamicScene extends Scene {
+export interface DynamicScene extends Scene {
 
         /**
          * Updates the scene state.

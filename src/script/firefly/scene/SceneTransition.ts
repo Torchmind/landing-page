@@ -24,7 +24,7 @@ import {Scene} from "../../scene/Scene";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-interface SceneTransition {
+export interface SceneTransition {
 
         /**
          * Draws a scene transition.
