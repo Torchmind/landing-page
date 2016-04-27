@@ -47,7 +47,7 @@ export class Color implements Cloneable {
 
         /**
          * Creates a copy which utilizes the supplied listener as a filter instead.
-         * 
+         *
          * @param listener a listener.
          * @returns {Color} a clone.
          */
@@ -265,7 +265,7 @@ export class Color implements Cloneable {
          * @returns {string} an rgb(a) function string.
          */
         get rgb() : string {
-                return (this._alpha == 255 ? 'rgb' : 'rgba') + '(' + this._red + ', ' + this._green + ', ' + this._blue + (this._alpha != 255 ? ', ' + this._alpha : '') + ')';
+                return (this._alpha == 255 ? 'rgb' : 'rgba') + '(' + this._red + ', ' + this._green + ', ' + this._blue + (this._alpha != 255 ? ', ' + this._alpha / 255 : '') + ')';
         }
 
         /**
