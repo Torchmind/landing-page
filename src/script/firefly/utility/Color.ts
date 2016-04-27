@@ -255,4 +255,14 @@ export class Color implements Cloneable {
         get rgb() : string {
                 return (this._alpha == 255 ? 'rgb' : 'rgba') + '(' + this._red + ', ' + this._green + ', ' + this._blue + (this._alpha != 255 ? ', ' + this._alpha : '') + ')';
         }
+
+        /**
+         * Retrieves a copy of the color white as represented by this type.
+         *
+         * @returns {Color} a white color.
+         * @constructor
+         */
+        static get WHITE() : Color {
+                return new Color(255, 255, 255);
+        }
 }
