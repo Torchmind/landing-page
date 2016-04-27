@@ -46,6 +46,18 @@ export class Color implements Cloneable {
         }
 
         /**
+         * Creates a copy which utilizes the supplied listener as a filter instead.
+         * 
+         * @param listener a listener.
+         * @returns {Color} a clone.
+         */
+        public hook(listener : (color : Color) => boolean = null) {
+                const color : Color = this.clone();
+                color._listener = listener;
+                return color;
+        }
+
+        /**
          * Checks whether this color is equal to the passed color.
          *
          * @param that a color to compare to.
