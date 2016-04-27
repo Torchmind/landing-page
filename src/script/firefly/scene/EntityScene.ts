@@ -33,7 +33,7 @@ export class EntityScene implements Scene {
          */
         public draw(container : Container, delta : number) : void {
                 for (var entity of this._entities) {
-                        entity.draw(container, delta);
+                        container.drawIsolated(entity, delta);
                 }
         }
 
