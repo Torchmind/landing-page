@@ -360,7 +360,7 @@ class CanvasSprite implements Sprite {
         /**
          * {@inheritDoc}
          */
-        public draw(scale : number = 0) : void {
+        public draw(scale : number = 1) : void {
                 this._container.isolate(() => {
                         this._ctx.globalAlpha = this._container.fillColor.alpha / 255;
 
