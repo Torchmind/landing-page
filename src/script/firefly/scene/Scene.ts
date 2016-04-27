@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 import {Drawable} from "../drawable/Drawable";
+import {Container} from "../container/Container";
 
 /**
  * Scene
@@ -24,11 +25,12 @@ import {Drawable} from "../drawable/Drawable";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export interface Scene extends Drawable {
-        
+
         /**
          * Updates the scene state.
          *
+         * @param container a parent container to draw on.
          * @param delta a number which describes the relation between frames and realworld seconds.
          */
-        think(delta : number) : void;
+        think(container : Container, delta : number) : void;
 }

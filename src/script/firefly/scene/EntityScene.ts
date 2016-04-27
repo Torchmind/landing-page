@@ -64,7 +64,7 @@ export class EntityScene implements Scene {
         /**
          * {@inheritDoc}
          */
-        public think(delta : number) : void {
+        public think(container : Container, delta : number) : void {
                 for (var entity of this._entities) {
                         entity.think(delta);
 
@@ -72,5 +72,16 @@ export class EntityScene implements Scene {
                                 this.remove(entity);
                         }
                 }
+        }
+
+        /* === Getters & Setters === */
+
+        /**
+         * Retrieves the amount of entities within the scene at this moment.
+         *
+         * @returns {number} an amount.
+         */
+        get length() : number {
+                return this._entities.length;
         }
 }
