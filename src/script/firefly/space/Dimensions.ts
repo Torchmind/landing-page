@@ -133,6 +133,15 @@ export class Dimensions implements Cloneable {
         }
 
         /**
+         * Retrieves the total amount of pixels within the bounds representation.
+         *
+         * @returns {number} a total amount of pixels.
+         */
+        get pixels() : number {
+                return (this._width * this._height);
+        }
+
+        /**
          * Retrieves the current element width.
          *
          * @returns {number} a width.
