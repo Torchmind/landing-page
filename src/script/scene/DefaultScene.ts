@@ -14,8 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {Container} from "../firefly/container/Container";
 import {EntityScene} from "../firefly/scene/EntityScene";
 import {TriangleEntity} from "./drawable/TriangleEntity";
+import {Vector2} from "../firefly/space/Position";
 
 /**
  * Default Scene
@@ -24,20 +26,32 @@ import {TriangleEntity} from "./drawable/TriangleEntity";
  *
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
-export class DefaultScene extends EntityScene{
+export class DefaultScene extends EntityScene {
 
         public constructor() {
                 super();
-
-                for(var i : number = 0; i < 100; ++i) {
-                        this.spawn(new TriangleEntity());
-                }
         }
 
         /**
          * {@inheritDoc}
          */
-        public think(delta : number) : void {
-                super.think(delta);
+        public draw(container : Container, delta : number) : void {
+                container.strokeColor.red = container.fillColor.red = container.strokeColor.green = container.fillColor.green = container.strokeColor.blue = container.fillColor.blue = 255;
+
+                super.draw(container, delta);
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        public think(container : Container, delta : number) : void {
+                super.think(container, delta);
+                const bounds : Vector2 = container.bounds.end;
+
+                while(this.length < (container.bounds.pixels * 0.00004)) {
+                        const entity : TriangleEntity = new TriangleEntity();
+                        entity.position = Vector2.RANDOM.multiplyBy(bounds);
+                        this.spawn(entity);
+                }
         }
 }
