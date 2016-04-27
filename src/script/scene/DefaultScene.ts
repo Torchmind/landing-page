@@ -29,10 +29,6 @@ import {Color} from "../firefly/utility/Color";
  */
 export class DefaultScene extends EntityScene {
 
-        public constructor() {
-                super();
-        }
-
         /**
          * {@inheritDoc}
          */
