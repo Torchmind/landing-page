@@ -328,7 +328,7 @@ export class Vector2 extends Point {
 
         /**
          * Retrieves a randomized vector.
-         * 
+         *
          * @returns {Vector2}
          * @constructor
          */
