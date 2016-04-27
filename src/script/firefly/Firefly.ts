@@ -73,7 +73,7 @@ export class Firefly {
                                         this._targetScene = this._transition = null;
                                 }
                         } else {
-                                this._scene.draw(this._container, delta);
+                                this._container.drawIsolated(this._scene, delta);
                         }
                 }
 

@@ -47,7 +47,7 @@ export class FadeTransition implements SceneTransition {
                         container.fillColor.alpha *= Math.min(1.0, (1.0 - (this._state / this._time)));
                         container.strokeColor.alpha *= Math.min(1.0, (1.0 - (this._state / this._time)));
 
-                        a.draw(container, delta);
+                        container.drawIsolated(a, delta);
                 });
 
                 // draw scene B (fading out)
@@ -55,7 +55,7 @@ export class FadeTransition implements SceneTransition {
                         container.fillColor.alpha *= Math.min(1.0, (this._state / this._time));
                         container.strokeColor.alpha *= Math.min(1.0, (this._state / this._time));
 
-                        b.draw(container, delta);
+                        container.drawIsolated(b, delta);
                 });
 
                 if (this._state >= this._time) {
