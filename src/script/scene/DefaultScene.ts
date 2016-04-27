@@ -16,7 +16,7 @@
  */
 import {Container} from "../firefly/container/Container";
 import {EntityScene} from "../firefly/scene/EntityScene";
-import {TriangleEntity} from "./drawable/TriangleEntity";
+import {TriangleEntity} from "./entity/TriangleEntity";
 import {Vector2} from "../firefly/space/Position";
 
 /**
