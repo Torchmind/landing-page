@@ -18,6 +18,7 @@ import {Container} from "./container/Container";
 import {proxy} from "./utility/Proxy";
 import {Scene} from "./scene/Scene";
 import {SceneTransition} from "./scene/SceneTransition";
+import {Keyboard} from "./input/Keyboard";
 
 /**
  * Default Tick Rate
@@ -42,6 +43,7 @@ export const DEFAULT_TICK_RATE : number = 40;
 export class Firefly {
         private _tickRate : number = 40;
         private _container : Container = null;
+        private _keyboard : Keyboard = new Keyboard();
 
         private _state : boolean = false;
         private _paused : boolean = false;
@@ -98,6 +100,7 @@ export class Firefly {
                 }
 
                 this._state = true;
+                this._keyboard.hook();
                 this.update();
         }
 
@@ -112,6 +115,7 @@ export class Firefly {
                         throw new Error("Already stopped.");
                 }
 
+                this._keyboard.shutdown();
                 this._state = false;
                 window.clearTimeout(this._timeoutId);
         }
@@ -177,6 +181,15 @@ export class Firefly {
          */
         get container() : Container {
                 return this._container;
+        }
+
+        /**
+         * Retrieves the local keyboard manager.
+         *
+         * @returns {Keyboard} a state representation.
+         */
+        get keyboard() : Keyboard {
+                return this._keyboard;
         }
 
         /**
