@@ -16,21 +16,13 @@
                 <!-- Scripts -->
                 <script src="assets/3rdParty/es6-shim.min.js"></script>
                 <script src="assets/3rdParty/system-polyfills.js"></script>
+                <script src="assets/3rdParty/jquery.min.js"></script>
                 <script src="assets/3rdParty/system.js"></script>
 
                 <!-- SystemJS -->
                 <script>
                         System.config({
-                                defaultJSExtensions: true,
-                                paths: {
-                                        jquery: 'assets/3rdParty/jquery.min'
-                                },
-                                meta: {
-                                        'assets/script/3rdParty/jquery/dist/jquery.min': {
-                                                format: 'amd',
-                                                exports: '$'
-                                        }
-                                }
+                                defaultJSExtensions: true
                         });
 
                         System.import('assets/script/main').then(null, console.error.bind(console));
