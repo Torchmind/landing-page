@@ -15,9 +15,7 @@
  * limitations under the License.
  */
 import {Container} from "../container/Container";
-import {Drawable} from "../drawable/Drawable";
 import {Entity} from "../entity/Entity";
-import {LivingEntity} from "../entity/LivingEntity";
 import {Scene} from "../scene/Scene";
 
 /**
@@ -70,7 +68,7 @@ export class EntityScene implements Scene {
                 for (var entity of this._entities) {
                         entity.think(delta);
 
-                        if (entity instanceof LivingEntity && (<LivingEntity> entity).isDead()) {
+                        if (entity.isDead()) {
                                 this.remove(entity);
                         }
                 }

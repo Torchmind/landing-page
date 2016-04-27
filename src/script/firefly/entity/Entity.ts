@@ -32,6 +32,11 @@ export interface Entity extends Drawable {
         position : Point;
 
         /**
+         * Checks whether the entity has died.
+         */
+        isDead() : boolean;
+
+        /**
          * Processes updates to the current entity state.
          *
          * @param delta a number which describes the relation between updates and realworld seconds.
