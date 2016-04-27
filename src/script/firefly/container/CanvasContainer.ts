@@ -362,10 +362,14 @@ class CanvasSprite implements Sprite {
          */
         public draw(scale : number = 0) : void {
                 this._container.isolate(() => {
+                        this._ctx.globalAlpha = this._container.fillColor.alpha / 255;
+
                         var scaledBounds : Dimensions = new Dimensions((this._bounds.width * scale), (this._bounds.height * scale));
 
                         this._container.translate((scaledBounds.end.multiplyBy(this._pivot.toVector()).multiplyByFactor(-1)));
                         this._ctx.drawImage(this._image, 0, 0, (this._bounds.width * scale), (this._bounds.height * scale));
+
+                        this._ctx.globalAlpha = 1.0;
                 });
         }
 
