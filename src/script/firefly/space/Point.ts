@@ -80,6 +80,15 @@ export class Point implements Cloneable {
         }
 
         /**
+         * Converts a point into a vector which is relative to the virtual space origin.
+         *
+         * @returns {Vector2} a vector.
+         */
+        public toVector() : Vector2 {
+                return new Vector2(this._x, this._y);
+        }
+
+        /**
          *
          * Updates this point's coordinates using the coordinates supplied by the passed point.
          *
