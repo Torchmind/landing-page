@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 import {Cloneable} from "../utility/Cloneable";
+import {Vector2} from "./Position";
 
 /**
  * Dimensions
@@ -97,6 +98,15 @@ export class Dimensions implements Cloneable {
         }
 
         /* == Getters & Setters == */
+
+        /**
+         * Retrieves a vector which points to the end of the dimensions described by this instance.
+         *
+         * @returns {Vector2} an end offset vector.
+         */
+        get end() : Vector2 {
+                return new Vector2(this._width, this._height);
+        }
 
         /**
          * Retrieves the current element height.
