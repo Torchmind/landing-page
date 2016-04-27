@@ -16,7 +16,7 @@
  */
 import {Container} from "../container/Container";
 import {Entity} from "./Entity";
-import {Point} from "../space/Point";
+import {Point} from "../space/Position";
 
 /**
  * Abstract Entity

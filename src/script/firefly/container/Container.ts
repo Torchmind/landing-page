@@ -16,10 +16,10 @@
  */
 import {Color} from "../utility/Color";
 import {Dimensions} from "../space/Dimensions";
-import {Point} from "../space/Point";
+import {Point} from "../space/Position";
 import {Sprite} from "../drawable/Sprite";
 import {Drawable} from "../drawable/Drawable";
-import {Vector2} from "../space/Vector2";
+import {Vector2} from "../space/Position";
 
 /**
  * Container

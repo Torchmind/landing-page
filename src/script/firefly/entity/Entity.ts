@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import {Drawable} from "../drawable/Drawable";
-import {Point} from "../space/Point";
+import {Point} from "../space/Position";
 
 /**
  * Entity

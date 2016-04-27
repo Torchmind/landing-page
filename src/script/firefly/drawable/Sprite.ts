@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import {Dimensions} from "../space/Dimensions";
-import {Point} from "../space/Point";
+import {Point} from "../space/Position";
 
 /**
  * Sprite
