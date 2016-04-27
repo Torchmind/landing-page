@@ -23,7 +23,7 @@
  * @returns {function(): any} a proxy.
  */
 export function proxy(method : (...args : any[]) => any, context : any) : (...args : any[]) => any {
-        return () => {
+        return function() {
                 return method.apply(context, arguments);
-        }
+        };
 }
