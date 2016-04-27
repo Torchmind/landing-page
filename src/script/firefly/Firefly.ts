@@ -76,6 +76,14 @@ export class Firefly {
                                 this._scene.draw(this._container, delta);
                         }
                 }
+
+                if (!this._container.rootScope) {
+                        console.error('Left over scopes detected. Did you call Container#pop()?');
+
+                        while (!this._container.rootScope) {
+                                this._container.pop();
+                        }
+                }
         }
 
         /**
