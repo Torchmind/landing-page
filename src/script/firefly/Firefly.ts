@@ -180,6 +180,15 @@ export class Firefly {
         }
 
         /**
+         * Retrieves the currently active application scene.
+         *
+         * @returns {Scene} a scene.
+         */
+        get scene() : Scene {
+                return this._scene;
+        }
+
+        /**
          * Retrieves the current framework pause state.
          *
          * When paused, the framework will keep rendering and thus updating all entities and scenes, but it will not
