@@ -18,6 +18,7 @@ import {Container} from "../firefly/container/Container";
 import {EntityScene} from "../firefly/scene/EntityScene";
 import {TriangleEntity} from "./entity/TriangleEntity";
 import {Vector2} from "../firefly/space/Position";
+import {Color} from "../firefly/utility/Color";
 
 /**
  * Default Scene
@@ -36,7 +37,7 @@ export class DefaultScene extends EntityScene {
          * {@inheritDoc}
          */
         public draw(container : Container, delta : number) : void {
-                container.strokeColor.red = container.fillColor.red = container.strokeColor.green = container.fillColor.green = container.strokeColor.blue = container.fillColor.blue = 255;
+                container.strokeColor = new Color(255, 255, 255, Math.min(160, container.strokeColor.alpha));
 
                 super.draw(container, delta);
         }

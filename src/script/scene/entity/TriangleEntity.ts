@@ -45,7 +45,7 @@ export class TriangleEntity extends VelocityEntity {
         public draw(container : Container, delta : number) : void {
                 super.draw(container, delta);
 
-                container.strokeColor.alpha = (Math.min(1.0, (this._lifetime / 5.0))) * 160;
+                container.strokeColor.alpha *= (Math.min(1.0, (this._lifetime / 5.0)));
 
                 container.startPath();
                 container.addPoint(new Point(0, 0));
