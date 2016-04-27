@@ -26,8 +26,8 @@ import {Point} from "../space/Position";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export abstract class AbstractEntity implements Entity {
-        public position : Point;
-        public rotation : number;
+        public position : Point = Point.ORIGIN;
+        public rotation : number = 0;
 
         /**
          * {@inheritDoc}
