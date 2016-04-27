@@ -327,6 +327,16 @@ export class Vector2 extends Point {
         }
 
         /**
+         * Retrieves a randomized vector.
+         * 
+         * @returns {Vector2}
+         * @constructor
+         */
+        static get RANDOM() : Vector2 {
+                return new Vector2(Math.random(), Math.random());
+        }
+
+        /**
          * Retrieves a normalized vector which points directly right.
          *
          * @returns {Vector2}
