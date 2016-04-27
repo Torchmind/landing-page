@@ -39,7 +39,7 @@ export abstract class AbstractEntity implements Entity {
         /**
          * {@inheritDoc}
          */
-        public think(delta : number) : void {
+        public think(container : Container, delta : number) : void {
         }
 
         /**

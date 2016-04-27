@@ -16,6 +16,7 @@
  */
 import {Drawable} from "../drawable/Drawable";
 import {Point} from "../space/Position";
+import {Container} from "../container/Container";
 
 /**
  * Entity
@@ -44,7 +45,8 @@ export interface Entity extends Drawable {
         /**
          * Processes updates to the current entity state.
          *
+         * @param container the container to draw in.
          * @param delta a number which describes the relation between updates and realworld seconds.
          */
-        think(delta : number) : void;
+        think(container : Container, delta : number) : void;
 }

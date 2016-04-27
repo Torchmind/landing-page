@@ -49,7 +49,7 @@ export class EntityScene implements Scene {
                         throw new Error("No such element.");
                 }
 
-                this._entities.slice(index, 1);
+                this._entities.splice(index, 1);
         }
 
         /**
@@ -66,7 +66,7 @@ export class EntityScene implements Scene {
          */
         public think(container : Container, delta : number) : void {
                 for (var entity of this._entities) {
-                        entity.think(delta);
+                        entity.think(container, delta);
 
                         if (entity.isDead()) {
                                 this.remove(entity);

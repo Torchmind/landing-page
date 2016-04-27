@@ -16,6 +16,7 @@
  */
 import {AbstractEntity} from "../../firefly/entity/AbstractEntity";
 import {Vector2} from "../space/Position";
+import {Container} from "../container/Container";
 
 /**
  * Velocity Entity
@@ -35,9 +36,9 @@ export abstract class VelocityEntity extends AbstractEntity {
         /**
          * {@inheritDoc}
          */
-        public think(delta : number) : void {
+        public think(container : Container, delta : number) : void {
                 this.position.offsetBy(this.velocity.clone().multiplyByFactor(delta));
 
-                super.think(delta);
+                super.think(container, delta);
         }
 }
