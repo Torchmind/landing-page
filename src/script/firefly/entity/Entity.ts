@@ -32,6 +32,11 @@ export interface Entity extends Drawable {
         position : Point;
 
         /**
+         * Stores an entity rotation.
+         */
+        rotation : number;
+
+        /**
          * Checks whether the entity has died.
          */
         isDead() : boolean;
