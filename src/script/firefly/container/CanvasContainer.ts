@@ -125,7 +125,7 @@ export class CanvasContainer implements Container {
          */
         public createSprite(uri : string) : Promise<Sprite> {
                 return new Promise<Sprite>((resolve, reject) => {
-                        const img = new HTMLImageElement();
+                        const img = <HTMLImageElement> new Image();
                         img.src = uri;
 
                         img.onload = () => {
@@ -284,7 +284,7 @@ export class CanvasContainer implements Container {
          * @returns {Point} a center point.
          */
         get center() : Point {
-                return (new Point(this._bounds.width, this._bounds.height)).immutable();
+                return (new Point(this._bounds.width / 2, this._bounds.height / 2)).immutable();
         }
 
         /**
@@ -362,8 +362,8 @@ class CanvasSprite implements Sprite {
          */
         public draw(scale : number = 0) : void {
                 this._container.isolate(() => {
-                        this._container.translate((new Vector2(this._bounds.width, this._bounds.height).update(this._pivot).multiplyByFactor(-1)));
-                        this._ctx.drawImage(this._image, 0, 0, (this._bounds.width * scale), (this._bounds.height * scale));
+                        this._container.translate((new Vector2(this._bounds.width, this._bounds.height).multiplyBy(this._pivot.toVector()).multiplyByFactor(-1)));
+                        this._ctx.drawImage(this._image, (this._bounds.width * scale), (this._bounds.height * scale));
                 });
         }
 
@@ -392,6 +392,15 @@ class CanvasSprite implements Sprite {
          */
         get pivot() : Point {
                 return this._pivot.immutable();
+        }
+
+        /**
+         * Sets the pivot point.
+         *
+         * @param value
+         */
+        set pivot(value : Point) {
+                this._pivot = value;
         }
 }
 
