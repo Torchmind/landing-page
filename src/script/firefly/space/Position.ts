@@ -264,6 +264,8 @@ export class Vector2 extends Point {
          * @returns {Vector2} a reference to this vector.
          */
         public rotate(angle : number) : Vector2 {
+                angle = Vector2.toRadians(angle);
+
                 const px : number = this._x * Math.cos(angle) - this._y * Math.sin(angle);
                 const py : number = this._x * Math.sin(angle) + this._y * Math.cos(angle);
 
