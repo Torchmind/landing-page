@@ -26,7 +26,7 @@ import {Point} from "../space/Position";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export abstract class AbstractEntity implements Entity {
-        public position : Point = Point.ORIGIN;
+        public position : Point = Point.ORIGIN.clone();
         public rotation : number = 0;
 
         /**
