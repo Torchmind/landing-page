@@ -256,6 +256,24 @@ export class Vector2 extends Point {
         }
 
         /**
+         * Rotates the vector around its origin (0,0).
+         *
+         * This method returns a reference to its parent instance and is thus chain-able.
+         *
+         * @param angle an angle.
+         * @returns {Vector2} a reference to this vector.
+         */
+        public rotate(angle : number) : Vector2 {
+                const px : number = this._x * Math.cos(angle) - this._y * Math.sin(angle);
+                const py : number = this._x * Math.sin(angle) + this._y * Math.cos(angle);
+
+                this._x = px;
+                this._y = py;
+
+                return this;
+        }
+
+        /**
          * Converts an angle in degrees into radians.
          *
          * @param angle an angle in degrees.
