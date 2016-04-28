@@ -38,7 +38,7 @@ export class Point implements Cloneable {
          * {@inheritDoc}
          */
         public clone() : Point {
-                return new Point(this._x, this._y, this._listener);
+                return new Point(this._x, this._y);
         }
 
         /**
