@@ -38,8 +38,8 @@ export class Keyboard {
          * Hooks all relevant keyboard events.
          */
         public hook() : void {
-                window.addEventListener('keydown', this._keyDownHandler);
-                window.addEventListener('keyup', this._keyUpHandler);
+                window.addEventListener('keydown', this._keyDownHandler, true);
+                window.addEventListener('keyup', this._keyUpHandler, true);
         }
 
         /**
