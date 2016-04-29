@@ -70,7 +70,7 @@ gulp.task('script-development', ['dependency', 'typescript-development']);
  *
  * Copies and optimizes all static resources into the distribution directory.
  */
-gulp.task('static', ['less', 'resource', 'template']);
+gulp.task('static', ['less', 'resource', 'template', 'favicon']);
 
 
 // === Utility Tasks === \\
@@ -151,6 +151,17 @@ gulp.task('typescript-development', () => {
 });
 
 // === Static Resource Tasks === \\
+
+/**
+ * Favicon Task
+ *
+ * Copies the page's favicon to the distribution directory.
+ */
+gulp.task('favicon', () => {
+        return gulp.src(path.join(__dirname, 'src/favicon.ico'))
+                .pipe(gulp.dest(path.join(__dirname, 'dist/')))
+                .pipe(sync.stream());
+});
 
 /**
  * Less Task
