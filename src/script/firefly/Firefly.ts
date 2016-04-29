@@ -41,6 +41,8 @@ export const DEFAULT_TICK_RATE : number = 40;
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export class Firefly {
+        public static debug : boolean = false;
+
         private _tickRate : number = 40;
         private _container : Container = null;
         private _keyboard : Keyboard = new Keyboard();
