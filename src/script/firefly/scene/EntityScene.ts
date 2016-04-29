@@ -26,7 +26,7 @@ import {Scene} from "../scene/Scene";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export class EntityScene implements Scene {
-        private _entities : Entity[] = [];
+        protected _entities : Entity[] = [];
 
         /**
          * {@inheritDoc}
