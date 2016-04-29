@@ -185,6 +185,15 @@ export class CanvasContainer implements Container {
         /**
          * {@inheritDoc}
          */
+        drawText(text : string, font : string = '18px Helvetica', alignment : string = 'center') : void {
+                this._ctx.font = font;
+                this._ctx.textAlign = alignment;
+                this._ctx.fillText(text, 0, 0);
+        }
+
+        /**
+         * {@inheritDoc}
+         */
         public fillPath() : void {
                 this.drawPath();
                 this._ctx.fill();

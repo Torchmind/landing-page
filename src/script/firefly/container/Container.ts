@@ -124,6 +124,15 @@ export interface Container {
         drawLine(x : number, y : number, thickness? : number) : void;
 
         /**
+         * Draws a text on-screen.
+         *
+         * @param text the text.
+         * @param font a font (CSS specification).
+         * @param alignment an alignment (right, center, left).
+         */
+        drawText(text : string, font? : string, alignment? : string) : void;
+
+        /**
          * Fills the path which has been added to the current state after {@link #startPath()} using
          * {@link addPoint(Point)}.
          */
