@@ -68,6 +68,14 @@ export class EntityScene implements Scene {
                 for (var entity of this._entities) {
                         entity.think(container, delta);
 
+                        if (entity.collision != null) {
+                                for (var other of this._entities) {
+                                        if (entity.collision.collide(other)) {
+                                                entity.onCollide(other);
+                                        }
+                                }
+                        }
+
                         if (entity.isDead()) {
                                 this.remove(entity);
                         }

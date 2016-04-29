@@ -14,9 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import {Collision} from "../space/Collision";
 import {Container} from "../container/Container";
 import {Entity} from "./Entity";
-import {Point} from "../space/Position";
+import {Point, Vector2} from "../space/Position";
+import {Color} from "../utility/Color";
+import {Firefly} from "../Firefly";
 
 /**
  * Abstract Entity
@@ -26,6 +29,7 @@ import {Point} from "../space/Position";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export abstract class AbstractEntity implements Entity {
+        public collision : Collision = null;
         public position : Point = Point.ORIGIN.clone();
         public rotation : number = 0;
 
@@ -46,7 +50,21 @@ export abstract class AbstractEntity implements Entity {
          * {@inheritDoc}
          */
         public draw(container : Container, delta : number) : void {
+                if (Firefly.debug && this.collision != null) {
+                        container.isolate(() => {
+                                container.strokeColor = new Color(255, 0, 0);
+                                container.translate(this.collision.center.toVector());
+                                container.drawCircle(this.collision.radius);
+                        });
+                }
+
                 container.translate(this.position.toVector());
                 container.rotate(this.rotation);
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        public onCollide(entity : Entity) : void {
         }
 }

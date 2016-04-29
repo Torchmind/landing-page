@@ -17,6 +17,7 @@
 import {Drawable} from "../drawable/Drawable";
 import {Point} from "../space/Position";
 import {Container} from "../container/Container";
+import {Collision} from "../space/Collision";
 
 /**
  * Entity
@@ -26,6 +27,11 @@ import {Container} from "../container/Container";
  * @author <a href="mailto:johannesd@torchmind.com">Johannes Donath</a>
  */
 export interface Entity extends Drawable {
+
+        /**
+         * Stores a collision representation for this entity.
+         */
+        collision : Collision;
 
         /**
          * Stores the local entity position within the virtual world.
@@ -41,6 +47,13 @@ export interface Entity extends Drawable {
          * Checks whether the entity has died.
          */
         isDead() : boolean;
+
+        /**
+         * Handles collisions with other entities when {@link #collision} returns a non-null value.
+         *
+         * @param entity an entity.
+         */
+        onCollide(entity : Entity) : void;
 
         /**
          * Processes updates to the current entity state.
