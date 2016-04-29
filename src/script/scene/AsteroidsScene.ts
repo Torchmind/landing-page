@@ -180,7 +180,7 @@ export class AsteroidsScene extends EntityScene {
 
                                                         this._entities.splice(0, this._entities.length);
                                                 } else {
-                                                        $('#main').show(5000);
+                                                        $('#main').fadeIn(5000);
                                                         this._firefly.switchScene(new DefaultScene(), new FadeTransition(5));
                                                 }
                                         }

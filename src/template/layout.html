@@ -32,7 +32,13 @@
                 <canvas id="background"></canvas>
 
                 <main id="page-wrapper">
-
+                        <section id="main">
+                                {% block main %}{% endblock %}
+                        </section>
                 </main>
+
+                <footer id="page-footer">
+                        <a href="https://github.com/Torchmind/landing-page">Source @ GitHub</a>
+                </footer>
         </body>
 </html>

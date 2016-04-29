@@ -61,7 +61,7 @@ $(document).keydown((event) => {
                 if (++secretIndex >= SECRET_CODE.length) {
                         console.log('Well, you found me. Congratulations.');
 
-                        $('#main').hide(5000);
+                        $('#main').fadeOut(5000);
 
                         secretIndex = 0;
                         firefly.switchScene(new AsteroidsScene(firefly), new FadeTransition(5));
