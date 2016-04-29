@@ -169,7 +169,9 @@ export class CanvasContainer implements Container {
          * {@inheritDoc}
          */
         public drawCircle(r : number, thickness : number = 1) : void {
+                this._ctx.beginPath();
                 this._ctx.arc(0, 0, r, 0, (2 * Math.PI), false);
+                this._ctx.stroke();
         }
 
         /**
