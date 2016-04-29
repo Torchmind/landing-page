@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="828.78125"
+   height="828.78125"
+   id="svg3788"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="torchmind.svg"
+   inkscape:export-filename="E:\Dokumente\Project\Evil-Co\logos\evilco.png"
+   inkscape:export-xdpi="57.599998"
+   inkscape:export-ydpi="57.599998">
+  <title
+     id="title3752">Torchmind Logo</title>
+  <defs
+     id="defs3790">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4141"
+       x="-0.036047082"
+       width="1.0720942"
+       y="-0.017988253"
+       height="1.0359765">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.9960842"
+         id="feGaussianBlur4143" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-106.94097"
+     inkscape:cy="175.05471"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata3793">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Torchmind Logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-216.24917,-237.97164)">
+    <g
+       id="g4145"
+       transform="translate(200.3916,1.335144e-5)">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter4141)"
+         d="M 486.65625,0 C 403.69477,16.53936 333.13713,99.63985 287.90625,175.71875 168.57856,376.42947 160.43274,744.36167 331.4375,800 287.03041,754.0955 242.21829,633.11214 307.40625,509.0625 c 112.60762,-214.28702 41.35157,-220.7458 42.0625,-221.15625 9.60903,-5.54777 142.37467,94.88696 167.65625,274.125 13.82094,97.98588 -2.73657,185.50451 -44.5,232.75 C 635.69621,728.2697 639.97365,435.56244 495.4375,262.65625 448.74725,206.80148 394.14415,113.28959 486.65625,0 Z M 428.875,419.9375 c -30.57903,36.31893 -62.90223,96.37121 -79.46875,163.4375 -16.00672,64.80001 3.47092,182.7062 20,216.5625 -2.95576,-15.2354 -4.625,-33.01575 -4.625,-51.96875 0,-56.67013 15.11777,-102.5625 33.8125,-102.5625 18.69474,0 33.875,45.89237 33.875,102.5625 0,18.9744 -1.7568,36.78425 -4.71875,52.03125 16.5401,-33.8477 40.30487,-144.72313 -0.15625,-206.53125 -29.1877,-44.58691 -30.90138,-121.28297 1.28125,-173.53125 z"
+         transform="translate(30.248829,252.36224)"
+         id="path4135"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3796"
+         transform="translate(30.248829,252.36224)"
+         d="M 486.65625,0 C 403.69477,16.53936 333.13713,99.63985 287.90625,175.71875 168.57856,376.42947 160.43274,744.36167 331.4375,800 287.03041,754.0955 242.21829,633.11214 307.40625,509.0625 c 112.60762,-214.28702 41.35157,-220.7458 42.0625,-221.15625 9.60903,-5.54777 142.37467,94.88696 167.65625,274.125 13.82094,97.98588 -2.73657,185.50451 -44.5,232.75 C 635.69621,728.2697 639.97365,435.56244 495.4375,262.65625 448.74725,206.80148 394.14415,113.28959 486.65625,0 Z M 428.875,419.9375 c -30.57903,36.31893 -62.90223,96.37121 -79.46875,163.4375 -16.00672,64.80001 3.47092,182.7062 20,216.5625 -2.95576,-15.2354 -4.625,-33.01575 -4.625,-51.96875 0,-56.67013 15.11777,-102.5625 33.8125,-102.5625 18.69474,0 33.875,45.89237 33.875,102.5625 0,18.9744 -1.7568,36.78425 -4.71875,52.03125 16.5401,-33.8477 40.30487,-144.72313 -0.15625,-206.53125 -29.1877,-44.58691 -30.90138,-121.28297 1.28125,-173.53125 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
